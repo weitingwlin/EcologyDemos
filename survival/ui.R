@@ -2,21 +2,25 @@
 
 fluidPage(    
     # Give the page a title
-    titlePanel("Survival curve"),
+    titlePanel("Survivorship curve"),
   
     # Generate a row with a sidebar
     sidebarLayout(      
         
         # Define the sidebar with one input
         sidebarPanel(
-            selectInput("species", "Select a Species:", 
-                        choices = c( "Human", "Bird", "Fish"),
-                        selected = "Bird"),
+            selectInput("typeSpecies", "Select a Type:", 
+                        choices = c( "Type I"= "Human", "Type II" = "Bird", "Type III" = "Fish"),
+                        selected = NULL),
             hr(),
-            helpText("Different species have different survival curves."),
-            actionButton("update", "Simulate a generation"),
+            helpText(""),
+            actionButton("update", "Simulate"),
             
-            actionButton("clear", "Clear")
+            actionButton("clear", "Clear"),
+            hr(),
+            uiOutput("HelpBox"),
+            helpText( 
+            a("Check out real examples of Human survival curve!", href="http://www.mortality.org/cgi-bin/hmd/country.php?cntr=USA&level=1"))
         ),
         
         mainPanel(

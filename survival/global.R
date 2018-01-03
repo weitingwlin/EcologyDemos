@@ -7,11 +7,14 @@ mortality <- function(type, g){
   if (g <= 20){
       return(df[g,type])
   } else {
-      return(1) 
+      return(df[20,type]) 
   }
 }
 
-  
+helpTextsType <- list("Human" = "Type I survival curve: Human", 
+                      "Bird" = "Bird", 
+                      "Fish" = "Fish")
+
 lifescale <- function(type){
   
   long <- list("Human" = 5, "Bird" = 0.5, "Fish" = 0.5)
