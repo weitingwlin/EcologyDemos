@@ -13,14 +13,14 @@ fluidPage(
                         choices = c( "Type I"= "Human", "Type II" = "Bird", "Type III" = "Fish"),
                         selected = NULL),
             hr(),
-            helpText(""),
+            helpText("(Click [Simulate] to simulate one time step)"),
             actionButton("update", "Simulate"),
             
             actionButton("clear", "Clear"),
             hr(),
             uiOutput("HelpBox"),
             helpText( 
-            a("Check out real examples of Human survival curve!", href="http://www.mortality.org/cgi-bin/hmd/country.php?cntr=USA&level=1"))
+            a("Check out real examples of Human survival curve!", href=" https://weitingwlin.shinyapps.io/survival_human/"))
         ),
         
         mainPanel(

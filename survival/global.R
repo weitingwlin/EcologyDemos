@@ -11,9 +11,11 @@ mortality <- function(type, g){
   }
 }
 
-helpTextsType <- list("Human" = "Type I survival curve: Human", 
-                      "Bird" = "Bird", 
-                      "Fish" = "Fish")
+helpTextsType <- list("Human" = "Type I survivorship curve: mortality rate increases over time, 
+                                 as individuals get older (e.g. Human)", 
+                      "Bird" = "Type II survivorship curve: mortality does not change (e.g. Bird)", 
+                      "Fish" = "Type III survivorship curve: mortality is high when individuals are 
+                                young, and decrease after a critical stage (e.g. Fish)")
 
 lifescale <- function(type){
   
@@ -31,7 +33,8 @@ p1 <- function(D, type){
   p <- p + ylim(0, 1000 )
   #p <- p + geom_point(color='steelblue', size=3, alpha = 0.8) 
   p <- p + theme_minimal()
-  p <- p + theme(axis.text=element_text(size=16))
+  p <- p + theme(axis.text=element_text(size=18),
+                 text = element_text(size=20))
   return(p)
 }
 
@@ -43,6 +46,7 @@ p2 <- function(Din, type){
   p <- p + xlim(0, 22*lifescale( type) )
   p <- p + ylim(0, 1 )
   p <- p + theme_minimal()
-  p <- p + theme(axis.text=element_text(size=16))
+  p <- p + theme(axis.text=element_text(size=18),
+                 text = element_text(size=20))
   return(p)
 }
